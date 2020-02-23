@@ -1,0 +1,202 @@
+/*
+  ██╗███╗   ███╗██████╗  ██████╗ ██████╗ ████████╗███████╗
+  ██║████╗ ████║██╔══██╗██╔═══██╗██╔══██╗╚══██╔══╝██╔════╝
+  ██║██╔████╔██║██████╔╝██║   ██║██████╔╝   ██║   ███████╗
+  ██║██║╚██╔╝██║██╔═══╝ ██║   ██║██╔══██╗   ██║   ╚════██║
+  ██║██║ ╚═╝ ██║██║     ╚██████╔╝██║  ██║   ██║   ███████║
+  ╚═╝╚═╝     ╚═╝╚═╝      ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚══════╝
+                                                          
+*/
+
+@import "../../../assets/scss/variables";
+
+/*
+  ██████╗ ██╗   ██╗████████╗████████╗ ██████╗ ███╗   ██╗███████╗
+  ██╔══██╗██║   ██║╚══██╔══╝╚══██╔══╝██╔═══██╗████╗  ██║██╔════╝
+  ██████╔╝██║   ██║   ██║      ██║   ██║   ██║██╔██╗ ██║███████╗
+  ██╔══██╗██║   ██║   ██║      ██║   ██║   ██║██║╚██╗██║╚════██║
+  ██████╔╝╚██████╔╝   ██║      ██║   ╚██████╔╝██║ ╚████║███████║
+  ╚═════╝  ╚═════╝    ╚═╝      ╚═╝    ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+                                                                
+*/
+
+.button{
+  &:link,
+  &:visited {
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.3);
+  }
+
+  &:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,.5);
+  }
+
+  &-white {
+    background-color: #fff;
+    color: #777;
+  }
+
+  &-white::after {
+    background-color: #fff;
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+  }
+
+  &-slide-up {
+    animation: slideInFromBottom 2s ease-in-out .75s;
+    animation-fill-mode: backwards; // prevents the button from appearing before animation
+  }
+
+}
+
+/*
+   █████╗ ███╗   ██╗██╗███╗   ███╗ █████╗ ████████╗██╗ ██████╗ ███╗   ██╗███████╗
+  ██╔══██╗████╗  ██║██║████╗ ████║██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║██╔════╝
+  ███████║██╔██╗ ██║██║██╔████╔██║███████║   ██║   ██║██║   ██║██╔██╗ ██║███████╗
+  ██╔══██║██║╚██╗██║██║██║╚██╔╝██║██╔══██║   ██║   ██║██║   ██║██║╚██╗██║╚════██║
+  ██║  ██║██║ ╚████║██║██║ ╚═╝ ██║██║  ██║   ██║   ██║╚██████╔╝██║ ╚████║███████║
+  ╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝╚═╝     ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+                                                                                 
+*/
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(400px);
+  }
+
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+/*
+    ██╗  ██╗███████╗ █████╗ ██████╗ ███████╗██████╗ 
+    ██║  ██║██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗
+    ███████║█████╗  ███████║██║  ██║█████╗  ██████╔╝
+    ██╔══██║██╔══╝  ██╔══██║██║  ██║██╔══╝  ██╔══██╗
+    ██║  ██║███████╗██║  ██║██████╔╝███████╗██║  ██║
+    ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝
+ */
+
+.header {
+  position: relative;
+  height: 95vh; // 95% of the viewport height
+  background-image: linear-gradient(
+      to right bottom,
+      $transparentLightGreen,
+      $transparentDarkGreen
+    ),
+    url(../../../assets/images/demo1/hero.jpg);
+  background-size: cover; // cover tries to fill the image to the full width of the viewport
+  background-position: top; // makes sure the top of the image always stays to the top of the viewport cropping the bottom
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.logo-container {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  height: 35px;
+
+  // &:hover {
+  //   animation: slideInFromLeft 1s ease-out;
+  // }
+}
+
+.text-container {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+  /*
+    // use this if an animation has an unwanted little shake
+    backface-visibility: hidden;
+  */
+}
+
+.heading-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+
+  animation-name: slideInFromLeft;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.4px;
+
+  animation: slideInFromRight 2s ease-in-out;
+
+  // animation-delay: 3s;
+  // animation-iteration-count: 3;
+}

@@ -1,0 +1,123 @@
+.background {
+    height: 50vh;
+    background-color: rgb(199, 78, 78);
+}
+
+.top-corners {
+    padding: 1em;
+    border: 0.25em solid goldenrod;
+    position: absolute;
+    height: 50vw;
+    width: 50vw;
+    left: 50vw;
+    top: 50vh;
+    transform: translate(-50%, -50%) rotate(0.125turn);
+    background-color: rgb(199, 78, 78);
+    clip-path: polygon(100% 0, 0% 100%, 0 0);
+  
+    &::before, &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      background: rgb(199, 78, 78);
+    }
+    
+    &::before {
+      top: -0.4em;
+      bottom: -0.4em;
+      left: 10vw;
+      right: 10vw;
+    }
+    
+    &::after{
+      left: -0.4em;
+      right: -0.4em;
+      top: 10vw;
+      bottom: 10vw;
+    }
+}
+
+.bottom-corners {
+    padding: 1em;
+    border: 0.25em solid goldenrod;
+    position: absolute;
+    height: 50vw;
+    width: 50vw;
+    left: 50vw;
+    top: 50vh;
+    transform: translate(-50%, -50%) rotate(0.125turn);
+    background-color: #fff;
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  
+    &::before, &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      background-color: #fff;
+    }
+    
+    &::before {
+      top: -0.4em;
+      bottom: -0.4em;
+      left: 10vw;
+      right: 10vw;
+    }
+    
+    &::after{
+      left: -0.4em;
+      right: -0.4em;
+      top: 10vw;
+      bottom: 10vw;
+    }
+}
+
+.top-half {
+    height: 50%;
+    width: 100%;
+    background-color: rgb(199, 78, 78);
+}
+
+.more {
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50vh;
+    left: 50%;
+    transform: translate(-50%, -220%);
+    font-size: 7vw;
+}
+
+.talent {
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50vh;
+    // bottom: 0px;
+    left: 50%;
+    transform: translate(-50%, -72%);
+    font-size: 15vw;
+}
+
+.less {
+    display: block;
+    color: rgb(199, 78, 78);
+    text-transform: uppercase;
+    position: absolute;
+    top: 50vh;
+    left: 50%;
+    transform: translate(-50%, -31%);
+    font-size: 15vw;
+}
+
+.ego {
+    display: block;
+    color: goldenrod;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50vh;
+    left: 50%;
+    transform: translate(-50%, 120%);
+    font-size: 7vw;
+}

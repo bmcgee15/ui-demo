@@ -26,9 +26,9 @@
     position: relative;
     text-transform: uppercase;
     text-decoration: none;
-    padding: 15px 40px;
+    padding: .5vw 1vw;
     display: inline-block;
-    border-radius: 100px;
+    border-radius: 5vw;
     transition: all .2s;
   }
 
@@ -37,10 +37,10 @@
     box-shadow: 0 10px 20px rgba(0,0,0,.3);
   }
 
-  &:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-  }
+  // &:hover::after {
+  //   transform: scaleX(1.4) scaleY(1.6);
+  //   opacity: 0;
+  // }
 
   &:active {
     transform: translateY(-1px);
@@ -61,7 +61,7 @@
     display: inline-block;
     height: 100%;
     width: 100%;
-    border-radius: 100px;
+    border-radius: 5vw;
     position: absolute;
     top: 0;
     left: 0;
@@ -70,7 +70,7 @@
   }
 
   &-slide-up {
-    animation: slideInFromBottom 2s ease-in-out .75s;
+    animation: slideInFromBottom 1.5s ease-in-out 1s;
     animation-fill-mode: backwards; // prevents the button from appearing before animation
   }
 
@@ -113,7 +113,7 @@
 @keyframes slideInFromBottom {
   0% {
     opacity: 0;
-    transform: translateY(400px);
+    transform: translateY(200px);
   }
 
 
@@ -180,9 +180,10 @@
 
 .heading-primary-main {
   display: block;
-  font-size: 60px;
+  font-size: 2.5vw;
   font-weight: 400;
-  letter-spacing: 35px;
+  letter-spacing: 1.3vw;
+  padding-left: .35vw;
 
   animation-name: slideInFromLeft;
   animation-duration: 2s;
@@ -191,9 +192,9 @@
 
 .heading-primary-sub {
   display: block;
-  font-size: 20px;
+  font-size: .85vw;
   font-weight: 700;
-  letter-spacing: 17.4px;
+  letter-spacing: .65vw;
 
   animation: slideInFromRight 2s ease-in-out;
 
